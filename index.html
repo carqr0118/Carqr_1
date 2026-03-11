@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>CarQR</title>
+
+<style>
+body{
+font-family:Arial;
+background:url("bg.jpg");
+background-size:cover;
+background-position:center;
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.box{
+background:white;
+padding:60px;
+border-radius:20px;
+text-align:center;
+width:500px;
+}
+
+p{
+font-size:28px;
+margin:20px;
+}
+
+a{
+font-size:26px;
+background:#ff5a36;
+color:white;
+padding:15px 30px;
+text-decoration:none;
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>🚗 Mashina egasi</h1>
+
+<p id="name"></p>
+<p id="car"></p>
+<p id="number"></p>
+
+<a id="phoneBtn">📞 Qo‘ng‘iroq qilish</a>
+
+</div>
+
+<script>
+
+let params = new URLSearchParams(window.location.search)
+
+document.getElementById("name").innerText =
+"Ism: " + params.get("name")
+
+document.getElementById("car").innerText =
+"Mashina: " + params.get("car")
+
+document.getElementById("number").innerText =
+"Raqam: " + params.get("number")
+
+document.getElementById("phoneBtn").href =
+"tel:" + params.get("phone")
+
+</script>
+
+</body>
+</html>
